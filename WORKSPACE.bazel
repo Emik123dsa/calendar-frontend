@@ -3,7 +3,7 @@ workspace(
     managed_directories = {"@npm": ["node_modules"]},
 )
 
-load("//tools:bazel_deps.bzl", "fetch_dependencies")
+load("//:tools/bazel_deps.bzl", "fetch_dependencies")
 
 fetch_dependencies()
 
@@ -15,3 +15,26 @@ yarn_install(
     symlink_node_modules = False,
     yarn_lock = "//:yarn.lock",
 )
+
+# load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
+# install_bazel_dependencies()
+
+# load("@npm_bazel_typescript//:index.bzl", "ts_setup_workspace")
+# ts_setup_workspace()
+# load(
+#     "@io_bazel_rules_docker//repositories:repositories.bzl",
+#     container_repositories = "repositories",
+# )
+# container_repositories()
+
+# load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
+# container_deps()
+
+# load(
+#     "@io_bazel_rules_docker//nodejs:image.bzl",
+#     nodejs_image_repositories = "repositories",
+# )
+# nodejs_image_repositories()
+
+# load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
+# install_bazel_dependencies()

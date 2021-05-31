@@ -1,0 +1,34 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@build_bazel_rules_nodejs//:index.bzl", "copy_to_bin", "nodejs_test")
+load("@npm//@vue/cli-service:index.bzl", "vue_cli_service")
+
+vue_cli_service(
+    name = "serve",
+    args = ["serve"],
+    data = [
+        ".babelrc",
+        ":package.json",
+        "//:src"
+    ]
+)
+
+vue_cli_service(
+    name = "build",
+    outs = ["dist"],
+    args = [
+        "build",
+        "--dest",
+        "$(@D)/dist",
+        "--skip-plugins",
+        "eslint"
+    ],
+    data = [
+        ".babelrc",
+        ":package.json",
+        "//:src",
+        "@npm//vue",
+        "@npm//@vue/cli-plugin-babel",
+        "@npm//@vue/cli-plugin-eslint",
+    ]
+)
