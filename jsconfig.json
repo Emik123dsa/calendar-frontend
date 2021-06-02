@@ -1,1 +1,28 @@
-            
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "baseUrl": "./",
+    "target": "es6",
+    "experimentalDecorators": true,
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./src/app/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@fonts/*": ["./src/assets/fonts/*"],
+      "@images/*": ["./src/assets/images/*"],
+      "@styles/*": ["./src/assets/styles/*"],
+      "@components/*": ["./src/app/components/*"],
+      "@routers/*": ["./src/app/routers/*"],
+      "@views/*": ["./src/app/views/*"],
+      "@providers/*": ["./src/app/providers/*"],
+      "@layouts/*": ["./src/app/layouts/*"],
+      "@plugins/*": ["./src/app/plugins/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "./src/**/*.{spec,test}.js",
+    "./tests/**/*.{spec,test}.js"
+  ]
+}

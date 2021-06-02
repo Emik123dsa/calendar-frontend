@@ -5,7 +5,7 @@ workspace(
 
 load("//:tools/bazel_deps.bzl", "fetch_dependencies")
 
-# load("//:tools/bazel_docker_deps.bzl", "fetch_docker_dependencies")
+load("//:tools/bazel_docker_deps.bzl", "fetch_docker_dependencies")
 
 fetch_dependencies()
 
@@ -35,17 +35,11 @@ yarn_install(
     data = [
         "//:patches/jest-haste-map+27.0.2.patch",
     ],
-    symlink_node_modules = False,
+    symlink_node_modules = True,
     yarn_lock = "//:yarn.lock",
 )
 
-# fetch_docker_dependencies()
-# http_archive(
-#     name = "io_bazel_rules_docker",
-#     sha256 = "fd4c44fada22e25d2f4aaee5f46fbbd6d3a5aa1860fe8eb661c9921542d8fe54",
-#     strip_prefix = "rules_docker-e1701495705a15d2fb7613f39eb01c9de6d1bd1a",
-#     urls = ["https://github.com/bazelbuild/rules_docker/archive/e1701495705a15d2fb7613f39eb01c9de6d1bd1a.tar.gz"],
-# )
+fetch_docker_dependencies()
 
 # load(
 #     "@io_bazel_rules_docker//repositories:repositories.bzl",

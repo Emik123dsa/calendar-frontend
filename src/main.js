@@ -1,7 +1,12 @@
 import Vue from 'vue';
+import App from './app/index.vue';
 
-export const createApp = () => {
+import './assets/styles/thirdparty/_tailwindcss.scss';
+
+const createApp = () => {
   new Vue({
-    render: (h) => h('div', '12345354asdasdasadsdasdasdds3'),
+    render: h => h(App),
   }).$mount('#app');
 };
+
+createApp();

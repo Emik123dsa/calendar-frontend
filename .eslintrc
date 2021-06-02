@@ -1,20 +1,18 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es6": true,
     "node": true
   },
-  "ignorePatterns": [
-    "src/**/*.spec.vue",
-    "src/**/*.test.vue",
-    "src/**/*.spec.js",
-    "src/**/*.test.js"
-  ],
+  "ignorePatterns": ["src/**/*.{spec,test}.{vue,js}"],
   "extends": [
     "airbnb-base",
     "eslint:recommended",
     "plugin:vue/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:jest/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -26,7 +24,7 @@
     "parser": "babel-eslint",
     "include": [".babelrc"]
   },
-  "plugins": ["vue"],
+  "plugins": ["vue", "sonarjs", "jest"],
   "rules": {
     "prettier/prettier": [
       "error",
