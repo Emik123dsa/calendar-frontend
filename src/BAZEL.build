@@ -1,5 +1,9 @@
+package(default_visibility = ["//visibility:public"])
 filegroup(
     name = "src",
-    srcs = glob(["**/**"]),
+    srcs = glob(
+        include = ["*.js"],
+        exclude = ["*.spec.js"]
+    ),
     visibility = ["//visibility:public"]
 )

@@ -23,7 +23,8 @@
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module",
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "include": [".babelrc"]
   },
   "plugins": ["vue"],
   "rules": {

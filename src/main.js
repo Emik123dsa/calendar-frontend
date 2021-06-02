@@ -1,5 +1,7 @@
 import Vue from 'vue';
 
-new Vue({
-  render: h => h('div', '123'),
-}).$mount('#app');
+export const createApp = () => {
+  new Vue({
+    render: (h) => h('div', '12345354asdasdasadsdasdasdds3'),
+  }).$mount('#app');
+};
